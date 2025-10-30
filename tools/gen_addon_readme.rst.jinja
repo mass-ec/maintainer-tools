@@ -3,10 +3,6 @@
 {{- title }}
 {{ sub * title|length }}
 
-{% if not repo_org -%}.
-{% repo_org = org_name %}
-{% endif %}
-
 {{ fragments[name] }}
 {% endif %}
 {%- endmacro -%}
@@ -58,10 +54,10 @@
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/{{ repo_org }}/{{ repo_name }}/issues>`_.
+Bugs are tracked on `GitHub Issues <https://github.com/{{ org_name }}/{{ repo_name }}/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/{{ repo_org }}/{{ repo_name }}/issues/new?body=module:%20{{ addon_name }}%0Aversion:%20{{ branch }}%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/{{ org_name }}/{{ repo_name }}/issues/new?body=module:%20{{ addon_name }}%0Aversion:%20{{ branch }}%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -105,7 +101,7 @@ Current `maintainer{% if manifest.maintainers|length > 1 %}s{% endif %} <https:/
 {% for maintainer in manifest.maintainers %}|maintainer-{{ maintainer }}| {% endfor -%}
 {% endif %}
 
-This module is part of the `{{ repo_org }}/{{ repo_name }} <https://github.com/{{ repo_org }}/{{ repo_name }}/tree/{{ branch }}/{{ addon_name }}>`_ project on GitHub.
+This module is part of the `{{ org_name }}/{{ repo_name }} <https://github.com/{{ org_name }}/{{ repo_name }}/tree/{{ branch }}/{{ addon_name }}>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
 
