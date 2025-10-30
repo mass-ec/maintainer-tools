@@ -3,7 +3,7 @@
 {{- title }}
 {{ sub * title|length }}
 
-{% if org_name == 'mass-ec' -%}.
+{% if not repo_org -%}.
 {% repo_org = org_name %}
 {% endif %}
 
